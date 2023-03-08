@@ -1,0 +1,97 @@
+@import '../../style.scss';
+
+.navBar{
+    @include themify($themes){
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 70px;
+    background:themed('bg');
+    color: themed('textColor');
+    z-index: 2;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid themed('border');
+
+    @include mobile {
+        position: fixed;
+    }
+
+    .left{
+        display: flex;
+        align-items: center;
+
+        @include mobile {
+           width: 100%;
+           justify-content: space-between;
+        }
+        
+        .logo{
+            font-weight: bold;
+            color: themed('logo');
+            font-size: 25px;
+            cursor: pointer;
+        }
+        svg{
+            margin: 10px;
+            cursor: pointer;
+        }
+        .search{
+            display: flex;
+            align-items: center;
+            // background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+            
+
+            svg{
+                margin: 5px;
+            }
+
+            input{
+                border: none;
+                background: transparent;
+                color: themed('textColorSoft');
+
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+
+    }
+    .right {
+        display: flex;
+        align-items: center;
+
+        @include mobile {
+            display: none;
+        }
+
+        svg{
+            margin: 10px;
+            cursor: pointer;
+        }
+        .user{
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          font-weight: 500;
+
+            img{
+                object-fit: cover;
+                height: 35px;
+                width: 35px;
+                border-radius:50%;
+                
+            }
+
+            span{
+                margin-left: 10px;
+                color: themed('textColor');
+            }
+        }
+    }
+  }  
+}

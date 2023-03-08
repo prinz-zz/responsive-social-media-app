@@ -1,0 +1,101 @@
+@import '../../style.scss';
+
+
+.rightBar {
+    @include themify($themes){
+    color: themed('textColor');
+    background:themed('bgSoft');
+    flex:3;
+    position: sticky;
+    top:70px;
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+    
+    @include mobile {
+        display: none;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .cards{
+        padding: 15px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        -moz-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin-top: 22px;
+        background:themed('bg');
+
+        .subHeader{
+            font-size: 14px;
+            color: rgb(114, 114, 114);
+            display: flex;
+        }
+
+        .item{
+            margin: 15px 0px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            justify-content: space-between;
+
+            .userInfo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                span{
+                    font-size: 14px;
+                }
+                .activity {
+                    font-size: 12px;
+                    color: gray;
+                }
+                
+            }
+            .buttons {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                button {
+                    border: none;
+                    padding: 5px;
+                    color: #fff;
+                    cursor: pointer;
+
+                    &:first-child {
+                        background-color: #5e53f8;
+                    }
+                    &:last-child {
+                        background-color: #f85353;
+                    }
+                }
+            }
+            .rightInfo {
+                font-size: 12px;
+                color: gray;
+            }
+            
+            
+
+            .online {
+                height: 10px;
+                width: 10px;
+                background-color: rgb(25, 194, 25);
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left: 25px;
+            }
+    
+            img{
+                object-fit: cover;
+                height: 30px;
+                width: 30px;
+                border-radius:50%;
+            }
+        }
+    }
+  }
+}
